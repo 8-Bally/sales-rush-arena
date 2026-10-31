@@ -1,0 +1,9 @@
+{
+  "name": "sales-rush-multiplayer-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "10-minute multiplayer sales simulation MVP",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "ws": "^8.18.0" }
+}

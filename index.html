@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090b10"><meta name="description" content="Sales Rush is a real-time multiplayer sales competition. Build your pipeline, beat the clock, and close the quota.">
+<title>Sales Rush — Multiplayer Sales Arena</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="scanlines" aria-hidden="true"></div>
+<div id="lobby" class="screen">
+  <nav class="top-nav"><a class="brand" href="#top"><span class="brand-mark">SR</span><span>SALES<span class="brand-light">RUSH</span></span></a><div class="nav-status"><i></i> SYSTEM ONLINE <span class="nav-divider">/</span> MULTIPLAYER ARENA</div><a class="nav-link" href="#how">HOW TO PLAY ↗</a></nav>
+  <div class="lobby-wrap" id="top">
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> REAL-TIME SALES COMPETITION · 2–8 PLAYERS</div>
+      <h1>MAKE THE<br><em>DEAL.</em><br>BEAT THE CLOCK.</h1>
+      <p class="lead">Ten minutes. One quota. No time to overthink it.<br>Prospect fast, handle objections, and close your way to the top.</p>
+      <div class="hero-meta"><span>01 / PROSPECT</span><span>02 / PERSUADE</span><span>03 / CLOSE</span></div>
+    </section>
+    <section class="access-panel">
+      <div class="panel-top"><span>01 — CREW ACCESS</span><span class="live-pill"><i></i> LIVE</span></div>
+      <h2>Enter the arena.</h2><p class="panel-copy">Choose a callsign, then create a room or join your crew.</p>
+      <label for="name">YOUR CALLSIGN</label><input id="name" maxlength="18" placeholder="e.g. DealMaker" autocomplete="nickname">
+      <button id="createRoom" class="primary-btn">CREATE A ROOM <span>↗</span></button>
+      <div class="or-line"><span>OR JOIN AN EXISTING ROOM</span></div>
+      <div class="join-row"><input id="room" maxlength="8" placeholder="ROOM CODE" value="SALES" aria-label="Room code"><button id="join">JOIN →</button></div>
+      <p class="panel-foot"><span class="lock">●</span> Share your room code so others can compete in the same match.</p>
+    </section>
+  </div>
+  <section class="how" id="how"><div class="section-kicker">THE PLAYBOOK / 03 STEPS</div><div class="how-grid">
+    <article><span class="step-no">01</span><h3>FIND LEADS</h3><p>Build your pipeline and uncover prospects with real deal potential.</p></article>
+    <article><span class="step-no">02</span><h3>THINK FAST</h3><p>Answer buyer questions and objections before the five-second clock runs out.</p></article>
+    <article><span class="step-no">03</span><h3>CLOSE BIG</h3><p>Move deals forward, hit your $25K quota, and climb the leaderboard.</p></article>
+  </div><div class="bottom-note"><span>SALES RUSH v1.0</span><span>10:00 ROUND TIMER <b>·</b> $25,000 QUOTA <b>·</b> 5-SECOND DECISIONS</span></div></section>
+</div>
+
+<div id="game" class="hidden">
+  <header class="game-header"><div class="brand"><span class="brand-mark">SR</span><span>SALES<span class="brand-light">RUSH</span></span><small id="roomLabel">ROOM</small></div><div class="round-clock"><small>TIME REMAINING</small><div class="timer" id="timer">10:00</div></div><div class="quota"><span>TEAM QUOTA</span><b>$25,000</b><small id="quotaPct">0%</small></div></header>
+  <main>
+    <section class="left">
+      <div class="arena-heading"><div><div class="section-kicker">YOUR SALES FLOOR</div><h1>Close the gap.</h1></div><div class="round-tag"><i></i> ROUND IN PROGRESS</div></div>
+      <div class="stats"><div><span>YOUR SCORE</span><b id="score">0</b></div><div><span>REVENUE CLOSED</span><b id="revenue">$0</b></div><div><span>DEALS WON</span><b id="deals">0</b></div><div><span>ACTIVE PIPELINE</span><b id="pipeline">0</b></div></div>
+      <div class="quota-track"><div class="track-label"><span>QUOTA PROGRESS</span><span>$25,000 TARGET</span></div><div class="pipeline-bar"><div id="progress"></div></div><div class="stage-row"><span>LEAD</span><span>QUALIFIED</span><span>MEETING</span><span>PROPOSAL</span><span>CLOSED</span></div></div>
+      <div id="empty" class="card empty"><div class="empty-icon">＋</div><div class="section-kicker">NEXT OPPORTUNITY AWAITS</div><h2>Make your move.</h2><p>Prospect for a new lead. Every conversation is a chance to move the pipeline forward — but the clock is always running.</p><button id="prospect" class="primary-btn">GENERATE NEW LEAD <span>↗</span></button><div class="micro-tip">TIP: QUICK, CUSTOMER-FIRST ANSWERS EARN BONUS POINTS</div></div>
+      <div id="deal" class="card deal hidden"><div class="deal-top"><span id="stage">QUALIFICATION</span><span id="dealValue">Potential: $0</span></div><h2 id="company">Company</h2><p id="persona" class="persona"></p><div class="question-head"><span>INCOMING BUYER MESSAGE</span><b id="answerTimer">5.0</b></div><p id="question" class="question"></p><div id="answers" class="answers"></div><div id="feedback" class="feedback hidden"></div></div>
+      <div id="result" class="card result hidden"></div>
+    </section>
+    <aside class="right card"><div class="rank-head"><div><div class="section-kicker">LIVE STANDINGS</div><h2>THE LEADERBOARD</h2></div><span class="live-pill"><i></i> LIVE</span></div><div class="board-sub">PLAYERS IN THIS ROOM <span>RANK / SCORE</span></div><div id="leaderboard"></div><div class="rules"><div class="section-kicker">SCORING INTEL</div><div class="rule-row"><span>Strong buyer response</span><b>+100</b></div><div class="rule-row"><span>Fast-answer bonus</span><b>+250</b></div><div class="rule-row"><span>Closed deal</span><b>DEAL VALUE</b></div><p>Close deals to earn revenue and score. A poor response can cost you the prospect.</p></div><div class="side-footer">EVERY SECOND COUNTS <span>●</span></div></aside>
+  </main>
+</div>
+<script src="/game.js"></script>
+</body></html>
